@@ -6,7 +6,7 @@ from flask import Flask, request, Response
 from health_insurance.HIClass import HIClass
 
 # loading model
-model = pickle.load(open('C:/Users/PICHAU/repos/pa_hi/pa_hi/src/models/model_lgbm_final.pkl', 'rb'))
+model = pickle.load(open('models/model_lgbm_final.pkl', 'rb'))
 
 # initialize API
 app = Flask( __name__ )
