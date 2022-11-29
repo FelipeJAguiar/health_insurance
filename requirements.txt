@@ -27,7 +27,6 @@ Pillow==9.2.0
 plotly==5.10.0
 prettytable==3.5.0
 pytz==2022.2.1
-pywin32==302
 PyYAML==6.0
 scikit-plot==0.3.7
 scipy==1.8.1
