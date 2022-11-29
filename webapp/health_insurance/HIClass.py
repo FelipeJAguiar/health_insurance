@@ -5,12 +5,12 @@ import numpy as np
 class HIClass():
     def __init__(self):
         self.home_path = ''
-        self.annual_premium_scaler = pickle.load(open(self.home_path + 'features/annual_premium_scaler.pkl', 'rb'))
-        self.age_scaler = pickle.load(open(self.home_path + 'features/age_scaler.pkl', 'rb'))
-        self.vintage_scaler = pickle.load(open(self.home_path + 'features/vintage_scaler.pkl', 'rb'))
-        self.target_encode_region_code_scaler = pickle.load(open(self.home_path + 'features/target_encode_region_code_scaler.pkl', 'rb'))
-        self.target_encode_gender_scaler = pickle.load(open(self.home_path + 'features/target_encode_gender_scaler.pkl', 'rb'))
-        self.fe_policy_sales_channel_scaler = pickle.load(open(self.home_path + 'features/fe_policy_sales_channel_scaler.pkl', 'rb'))
+        self.annual_premium_scaler = pickle.load(open(self.home_path + 'webapp/features/annual_premium_scaler.pkl', 'rb'))
+        self.age_scaler = pickle.load(open(self.home_path + 'webapp/features/age_scaler.pkl', 'rb'))
+        self.vintage_scaler = pickle.load(open(self.home_path + 'webapp/features/vintage_scaler.pkl', 'rb'))
+        self.target_encode_region_code_scaler = pickle.load(open(self.home_path + 'webapp/features/target_encode_region_code_scaler.pkl', 'rb'))
+        self.target_encode_gender_scaler = pickle.load(open(self.home_path + 'webapp/features/target_encode_gender_scaler.pkl', 'rb'))
+        self.fe_policy_sales_channel_scaler = pickle.load(open(self.home_path + 'webapp/features/fe_policy_sales_channel_scaler.pkl', 'rb'))
     
     def feature_engineering(self, df1):
         
