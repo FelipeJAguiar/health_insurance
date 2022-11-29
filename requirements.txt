@@ -7,6 +7,7 @@ colorlog==6.7.0
 cycler==0.11.0
 fonttools==4.37.1
 greenlet==2.0.1
+Flask==2.2.2
 importlib-metadata==4.13.0
 joblib==1.1.0
 jupyter-contrib-core==0.4.0
