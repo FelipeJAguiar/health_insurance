@@ -1,64 +1,74 @@
-# pa_hi
+# INSURANCE ALL - CROSS SELL
 
 ## A project that predicts the number of potential customers for an insurance company's new product.
 
 #### This project was made by Felipe Aguiar.
 
-# 1. Business Problem.
-Insurance All is a health insurance company that is looking for expand its business, introducing in the market a new product: a car insurance. To understand how potential customers' buying propensity works and optimizing contact process, the sales center requested for a data solution based on a recently research made by the departament. 
+# Business Problem.
+Insurance All is a health insurance company looking for expand its business, introducing in the market a new product: a car insurance. To understand how potential customers' buying propensity works and optimizing contact process (limited in 20 thousand calls) , the sales center requested for a data solution based on a recently research made by the departament. 
 So the business problem is:
-Provide a rank of clients that have more propensity to purchase a car insurance, making the less number of calls possible. 
 
-# 2. Business Assumptions.
-Some questions to understand and quantify business assumptions related with model performance, were made by the sales center:
+👉 Provide a rank of clients that have more propensity to purchase a car insurance. 
 
-1 - What percentage of interested customers, could the sales center contact by calling 20,000?
-2 - What percentage of interested customers, could the sales center contact by calling 40,000?
-3 - To contact 80% of interested customers, how many calls does the center sales needs to make?
+# Business Assumptions
+Business assumptions made were divided in two topics: 
 
-# 3. Solution Strategy
+1-Provide a Google Sheets doc that, inputing a customer data, returns customer propensity. 
+
+2-Answer some questions to understand and quantify business assumptions related with model performance.
+
+   🟪 What percentage of interested customers, could the sales center contact by calling 20,000?
+   
+   🟪 What percentage of interested customers, could the sales center contact by calling 40,000?
+   
+   🟪 To contact 80% of interested customers, how many calls does the center sales needs to make?
+
+# Solution Strategy
+
+The method used to base the solution project was CRISP cicle, adopting some steps (Strategy to solve) to it. Below an image representing CRISP and steps defined.
+
+<img src="https://raw.githubusercontent.com/felipejaguiar/sales-predictions/main/img/Fluxogramas (1).png" alt="logo3" style="zoom:50%;" />
+Fonte: Autor, 2022.
 
 My strategy to solve this challenge was:
 
-**Step 01. Data Description:**Analyse descriptive statistic, data types, NA values, null values, dataset dimensions and others data attributes;
+1️⃣ Data Description: Analyse descriptive statistic, data types, NA values, null values, dataset dimensions and others data attributes;
 
-**Step 02. Feature Engineering:**Modify data values and creating new feature to improve the model; 
+2️⃣ Feature Engineering: Modify data values and creating new feature to improve the model; 
 
-**Step 03. Data Filtering:**Filter dataset useless rows and/or columns;
+3️⃣ Data Filtering: Filter dataset useless rows and/or columns;
 
-**Step 04. Exploratory Data Analysis:**Explore dataset to understand variables impact. Look for univariate (each variable), bivariate (relations between two variables) and multivariate (correlation between all variables) analyses;
+4️⃣ Exploratory Data Analysis: Explore dataset to understand variables impact. Look for univariate (each variable), bivariate (relations between two variables) and multivariate (correlation between all variables) analyses;
 
-**Step 05. Data Preparation:**Prepare data to apply the model;
+5️⃣ Data Preparation: Prepare data to apply the model;
 
-**Step 06. Feature Selection:**Select most importance features to apply the model;
+6️⃣. Feature Selection: Select most importance features to apply the model (Normalization, Rescaling, Transformation);
 
-**Step 07. Machine Learning Modelling:**Train machine learning models and evaluate it with metrics;  
+7️⃣ Machine Learning Modelling: Train machine learning models and evaluate it with metrics;  
 
-**Step 08. Hyperparameter Fine Tunning:**Find the best hyperparamters for the model choose;
+8️⃣ Hyperparameter Fine Tunning: Find the best hyperparamters for the model choose;
 
-**Step 09. Convert Model Performance to Business Values:**Traduce model perfomance to business values;
+9️⃣ Convert Model Performance to Business Values: Traduce model perfomance to business values;
 
-**Step 10. Deploy Model to Production:**Make the model available in real time (cloud) to anyone use. 
+🔟 Deploy Model to Production: Make the model available in real time (cloud) to anyone use. 
 
-# 4. Top 3 Data Insights
+# Top 3 Data Insights
 
-**Hypothesis 01:**Owners of newers vehicles are more interested in taking out insurance.
+<b>Hypothesis 01</b>: Owners of newers vehicles are more interested in taking out insurance.
 
-**FALSE:**Owners of vehicles that are between 1 and 2 years, are the most interested in taking out insurance.
+❌FALSE: Owners of vehicles that are between 1 and 2 years, are the most interested in taking out insurance.
 
-**Hypothesis 02:**Young people are less interested in taking out insurance.
+<b>Hypothesis 02</b>: Young people are less interested in taking out insurance.
 
-**TRUE:**Young people (age less than 30 years old) are less interested in taking out insurance, comparing with other ages (old and middle ages).
+✅TRUE:**Young people (age less than 30 years old) are less interested in taking out insurance, comparing with other ages (old and middle ages).
 
-**Hypothesis 03:**Customers that have between 200 to 299 days contract time, are more interested in taking out insurance.
+<b>Hypothesis 03</b>: Customers that have between 200 to 299 days contract time, are more interested in taking out insurance.
 
-**TRUE:**Customers that have 200 days or more contract time, are more interested in taking out insurance, comparing others customers.
+✅TRUE: Customers that have 200 days or more contract time, are more interested in taking out insurance, comparing others customers.
 
-# 5. Machine Learning Model Applied
+# Machine Learning Model Applied
 
-Being a Learn to Rank (rank propensity score for each customer) problem, some classifier models were tested: KNN, Logistic Regression, Extra Trees, Random Forest, XGBoost and LGBM. The next topic shows the results.
-
-Below, the metrics for each model trained:
+Being a Learn to Rank (rank propensity score for each customer) problem, some classifier models were tested. Below, the metrics for each model trained:
 
 |Model Name		       |PRECISION @K		  |RECALL @K  	|PRECISION @K CV  |RECALL	@K CV  |
 |--------------------|------------------|-------------|-----------------|--------------|
@@ -69,11 +79,15 @@ Below, the metrics for each model trained:
 |XGBoost          	 |0.452             |0.061	      |0.416            |0.069         |
 |LGBM	               |0.460 	          |0.062	      |0.425            |0.071         |
 
-According metrics obtained, the model choose was LGBM. In addition other factors that motivated the choice were, the LGBM being a small size model, which requires less storage use and makes applying it more agile.
+To improve the comparative visualization, a cumulative gains curve was plotted. Cumulative gains curve is an evaluation curve that demonstrates the model performance. Shows percentage of targets reached when considering a certain percentage of the population most likely to be targeted according to the model. We can see in the next plot, a comparative cumulative gains curve of all trained models.
+
+**image**
+
+According metrics obtained and comulativa gains curve, the model chosen was LGBM. In addition, other factor that motivated the choice were, the LGBM being a small size model, which requires less storage use and makes applying it more agile.
 
 Ps.: For the results in table were used k=1000 just to evaluate and comparing the models.
 
-# 6. Machine Learning Model Performance
+# Machine Learning Model Performance
 After LGBM be the applied model chosen, the next step is to adjust the hyperparameters. To do it, was used Optuna, a python library that find the best hyperparameters for the model.
 
 |Model Name		       |PRECISION @K		  |RECALL @K  	|
@@ -82,21 +96,57 @@ After LGBM be the applied model chosen, the next step is to adjust the hyperpara
 
 Note that in this case, the gains comparing tuned and not tuned model, were not satisfactory.
 
-# 7. Business Results
+# Business Results
+
+Google sheets doc request in business assumptions is available here:
+
+https://docs.google.com/spreadsheets/d/12oexnJCRgMqstAtTf2y8CnciALNvd5rCq97DicaszHs/edit#gid=1134939231
+
+Note: Examples in spreadsheet were got in a random way just to demonstrate how the button works.
+
+To answer the business questions, was used the metrics (Precision and Recall @K) Cumulative Gains Curve and Lift Curve. Where Lift Curve demonstrate how much the rank obtained from applied model is better than a random choice.
 
 <b>1 - What percentage of interested customers, could the sales center contact by calling 20,000?</b>
 
-<b>2- What percentage of interested customers, could the sales center contact by calling 40,000?</b>
+|Model Name		       |PRECISION @K		  |RECALL @K  	|
+|--------------------|------------------|-------------|
+|LGBM (20000 calls)  |0.308 	          |0.837        |
+
+Calling 20.000 you could contact 83.70% of interested customers. The Lift Curve shows that the model to 20.000 calls, is approximately 2.6 times better than using a random choice.
+
+***cgc and lift curve***
+
+<b>2 - What percentage of interested customers, could the sales center contact by calling 40,000?</b>
+
+|Model Name		       |PRECISION @K		  |RECALL @K  	|
+|--------------------|------------------|-------------|
+|LGBM (40000 calls)  |0.184 	          |0.999        |
+
+Calling 40.000, you could contact 99.92% of interested customers. The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times better than using a random choice.
+
+***cgc and lift curve***
 
 <b>3 - To contact 80% of interested customers, how many calls does the center sales needs to make?</b>
 
-# 8. Conclusions
+|Model Name		       |PRECISION @K		  |RECALL @K  	|
+|--------------------|------------------|-------------|
+|LGBM (18700 calls)  |0.315 	          |0.801        |
 
-# 9. Lessons Learned
+You need to make 18.700 calls, if you want to contact 80% of interested costumers.
 
-# 10. Next Steps to Improve
+# Conclusions
 
-# LICENSE
+At the end of this project, it was possible answer business questions and solve business problem, giving to sales center a solution for calls restrictions and helping in decision process. Besides it, the project was a good way to improve my knowledge about classification problems (in this case specific Learn to Rank), being possible find new model types, metrics and applications. 
 
-# All Rights Reserved - Comunidade DS 2022
-"# health_insurance" 
+# Next Steps to Improve
+
+ - Search about news machine learning classifiers models;
+ - Apply Boruta to improve feature selector;
+ - Search and build new features to feed the model; 
+
+# <b>Tools:</b>
+
+<a href = "www.python.org"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" target="_blank"></a>
+<a href = "www.jupyter.org"><img src="https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter" target="_blank"></a>
+<a href = "https://flask.palletsprojects.com/en/2.2.x/"><img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"></a>
+<a href = "https://docs.google.com/spreadsheets/d/12oexnJCRgMqstAtTf2y8CnciALNvd5rCq97DicaszHs/edit#gid=1134939231"><img src="https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white"></a>
