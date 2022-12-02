@@ -121,11 +121,11 @@ To answer the business questions, was used the metrics (Precision and Recall @K)
 |--------------------|------------------|-------------|
 |LGBM (20000 calls)  |0.308 	          |0.837        |
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1cgc.PNG" width="500" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1cgc.png" width="400" height="350" alt="logo" style="zoom:80%;" />
 
 Looking at point that red line crosses orange curve, we realize that you could contact approximately 83.70% of interested customers, making 20000 calls. 
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1lift.PNG" width="500" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1lift.png" width="400" height="350" alt="logo" style="zoom:80%;" />
 
 The Lift Curve shows that the model to 20.000 calls, is approximately 2.6 times better. It means that you would reach approximately 32% of interested customers using a random choice.
 
@@ -135,11 +135,11 @@ The Lift Curve shows that the model to 20.000 calls, is approximately 2.6 times 
 |--------------------|------------------|-------------|
 |LGBM (40000 calls)  |0.184 	          |0.999        |
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2cgc.PNG" width="500" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2cgc.png" width="400" height="350" alt="logo" style="zoom:80%;" />
 
 Looking at point that red line crosses orange curve, we realize that you could contact approximately 83.70% of interested customers, making 40000 calls. 
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2lift.PNG" width="500" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2lift.png" width="400" height="350" alt="logo" style="zoom:80%;" />
 
 The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times better. It means that you would reach approximately 66% of interested customers using a random choice.
 
@@ -149,7 +149,7 @@ The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times 
 |--------------------|------------------|-------------|
 |LGBM (18700 calls)  |0.315 	          |0.801        |
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q3cgc.PNG" width="500" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q3cgc.png" width="400" height="350" alt="logo" style="zoom:80%;" />
 
 Looking at point that red line crosses orange curve, we realize that you need making approximately 18700 calls to contact 80% of interested customers. 
 
