@@ -107,7 +107,7 @@ Note that in this case, the gains comparing tuned and not tuned model, were not 
 
 # Business Results
 
-Google sheets doc request in business assumptions is available here:
+Google sheets doc requested in business assumptions is available here:
 
 https://docs.google.com/spreadsheets/d/12oexnJCRgMqstAtTf2y8CnciALNvd5rCq97DicaszHs/edit#gid=1134939231
 
@@ -127,7 +127,7 @@ Looking at point that red line crosses orange curve, we realize that you could c
 
 <img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1lift.png" width="500" height="350" alt="logo" style="zoom:80%;" />
 
-The Lift Curve shows that the model to 20.000 calls, is approximately 2.6 times better than using a random choice.
+The Lift Curve shows that the model to 20.000 calls, is approximately 2.6 times better. It means that you would reach approximately 32% of interested customers using a random choice.
 
 <b>2 - What percentage of interested customers, could the sales center contact by calling 40,000?</b>
 
@@ -141,7 +141,7 @@ Looking at point that red line crosses orange curve, we realize that you could c
 
 <img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2lift.png" width="500" height="350" alt="logo" style="zoom:80%;" />
 
-The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times better than using a random choice.
+The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times better. It means that you would reach approximately 66% of interested customers using a random choice.
 
 <b>3 - To contact 80% of interested customers, how many calls does the center sales needs to make?</b>
 
