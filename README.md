@@ -1,8 +1,9 @@
 # INSURANCE ALL - CROSS SELL
 
-## A project that predicts the number of potential customers for an insurance company's new product.
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/insurance_all.png" width="400" height="240" alt="logo" align="middle" style="zoom:80%;" />
 
-#### This project was made by Felipe Aguiar.
+#### This project was based on kaggle's challenge and made by Felipe Aguiar. All context and the company are fictitious.
+Kaggle: https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction
 
 # Business Problem.
 Insurance All is a health insurance company looking for expand its business, introducing in the market a new product: a car insurance. To understand how potential customers' buying propensity works and optimizing contact process (limited in 20 thousand calls) , the sales center requested for a data solution based on a recently research made by the departament. 
@@ -27,7 +28,8 @@ Business assumptions made were divided in two topics:
 
 The method used to base the solution project was CRISP cicle, adopting some steps (Strategy to solve) to it. Below an image representing CRISP and steps defined.
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/sales-predictions/main/img/Fluxogramas (1).png" alt="logo3" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/fluxogram.png" width="380" height="400" alt="logo" style="zoom:80%;" />
+
 Fonte: Autor, 2022.
 
 My strategy to solve this challenge was:
@@ -42,7 +44,7 @@ My strategy to solve this challenge was:
 
 5️⃣ Data Preparation: Prepare data to apply the model;
 
-6️⃣. Feature Selection: Select most importance features to apply the model (Normalization, Rescaling, Transformation);
+6️⃣ Feature Selection: Select most importance features to apply the model (Normalization, Rescaling, Transformation);
 
 7️⃣ Machine Learning Modelling: Train machine learning models and evaluate it with metrics;  
 
@@ -60,7 +62,7 @@ My strategy to solve this challenge was:
 
 <b>Hypothesis 02</b>: Young people are less interested in taking out insurance.
 
-✅TRUE:**Young people (age less than 30 years old) are less interested in taking out insurance, comparing with other ages (old and middle ages).
+✅TRUE: Young people (age less than 30 years old) are less interested in taking out insurance, comparing with other ages (old and middle ages).
 
 <b>Hypothesis 03</b>: Customers that have between 200 to 299 days contract time, are more interested in taking out insurance.
 
@@ -81,7 +83,7 @@ Being a Learn to Rank (rank propensity score for each customer) problem, some cl
 
 To improve the comparative visualization, a cumulative gains curve was plotted. Cumulative gains curve is an evaluation curve that demonstrates the model performance. Shows percentage of targets reached when considering a certain percentage of the population most likely to be targeted according to the model. We can see in the next plot, a comparative cumulative gains curve of all trained models.
 
-**image**
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/CGC.png" width="400" height="520" alt="logo" style="zoom:80%;" />
 
 According metrics obtained and comulativa gains curve, the model chosen was LGBM. In addition, other factor that motivated the choice were, the LGBM being a small size model, which requires less storage use and makes applying it more agile.
 
@@ -112,9 +114,10 @@ To answer the business questions, was used the metrics (Precision and Recall @K)
 |--------------------|------------------|-------------|
 |LGBM (20000 calls)  |0.308 	          |0.837        |
 
-Calling 20.000 you could contact 83.70% of interested customers. The Lift Curve shows that the model to 20.000 calls, is approximately 2.6 times better than using a random choice.
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1cgc.png" width="500" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1lift.png" width="500" height="350" alt="logo" style="zoom:80%;" />
 
-***cgc and lift curve***
+Calling 20.000 you could contact 83.70% of interested customers. The Lift Curve shows that the model to 20.000 calls, is approximately 2.6 times better than using a random choice.
 
 <b>2 - What percentage of interested customers, could the sales center contact by calling 40,000?</b>
 
@@ -122,15 +125,18 @@ Calling 20.000 you could contact 83.70% of interested customers. The Lift Curve 
 |--------------------|------------------|-------------|
 |LGBM (40000 calls)  |0.184 	          |0.999        |
 
-Calling 40.000, you could contact 99.92% of interested customers. The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times better than using a random choice.
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2cgc.png" width="500" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2lift.png" width="500" height="350" alt="logo" style="zoom:80%;" />
 
-***cgc and lift curve***
+Calling 40.000, you could contact 99.92% of interested customers. The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times better than using a random choice.
 
 <b>3 - To contact 80% of interested customers, how many calls does the center sales needs to make?</b>
 
 |Model Name		       |PRECISION @K		  |RECALL @K  	|
 |--------------------|------------------|-------------|
 |LGBM (18700 calls)  |0.315 	          |0.801        |
+
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q3cgc.png" width="500" height="350" alt="logo" style="zoom:80%;" />
 
 You need to make 18.700 calls, if you want to contact 80% of interested costumers.
 
