@@ -1,6 +1,6 @@
 # INSURANCE ALL - CROSS SELL
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/insurance_all.png" width="400" height="240" alt="logo" align="middle" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/insurance_all.png" alt="logo12" style="zoom:80%;" />
 
 #### This project was based on kaggle's challenge and made by Felipe Aguiar. All context and the company are fictitious.
 Kaggle: https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction
@@ -83,7 +83,7 @@ Being a Learn to Rank (rank propensity score for each customer) problem, some cl
 
 To improve the comparative visualization, a cumulative gains curve was plotted. Cumulative gains curve is an evaluation curve that demonstrates the model performance. Shows percentage of targets reached when considering a certain percentage of the population most likely to be targeted according to the model. We can see in the next plot, a comparative cumulative gains curve of all trained models.
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/CGC.png" width="400" height="520" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/cgc.png" alt="logo11" style="zoom:80%;" />
 
 According metrics obtained and comulativa gains curve, the model chosen was LGBM. In addition, other factor that motivated the choice were, the LGBM being a small size model, which requires less storage use and makes applying it more agile.
 
