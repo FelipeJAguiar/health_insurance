@@ -4,7 +4,7 @@
 
 #### This project was based on kaggle's challenge and made by Felipe Aguiar. All context about company are fictitious.
 
-# Business Problem.
+# Business Problem
 Insurance All is a health insurance company looking for expand its business, introducing in the market a new product: a car insurance. To understand how potential customers' buying propensity works and optimizing contact process (limited in 20 thousand calls) , the sales center requested for a data solution based on a recently research made by the departament. 
 So the business problem is:
 
@@ -17,9 +17,9 @@ Business assumptions made were divided in two topics:
 
 2 - Answer some questions to understand and quantify business assumptions related with model performance.
 
-   🟪 What percentage of interested customers, could the sales center contact by calling 20,000?
+   🟪 Which percentage of interested customers, could the sales center contact by calling 20,000?
    
-   🟪 What percentage of interested customers, could the sales center contact by calling 40,000?
+   🟪 Which percentage of interested customers, could the sales center contact by calling 40,000?
    
    🟪 To contact 80% of interested customers, how many calls does the center sales needs to make?
 
@@ -115,33 +115,33 @@ Note: Examples in spreadsheet were got in a random way just to demonstrate how t
 
 To answer the business questions, was used the metrics (Precision and Recall @K) Cumulative Gains Curve and Lift Curve. Where Lift Curve demonstrate how much the rank obtained from applied model is better than a random choice.
 
-<b>1 - What percentage of interested customers, could the sales center contact by calling 20,000?</b>
+<b>1 - Which percentage of interested customers, could the sales center contact by calling 20,000?</b>
 
 |Model Name		       |PRECISION @K		  |RECALL @K  	|
 |--------------------|------------------|-------------|
 |LGBM (20000 calls)  |0.308 	          |0.837        |
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1cgc.png" width="400" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1cgc.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
-Looking at point that red line crosses orange curve, we realize that you could contact approximately 83.70% of interested customers, making 20000 calls. 
+Looking at point that red line crosses orange curve, we realize that you could contact approximately <b>83.70%</b> of interested customers, making 20000 calls. 
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1lift.png" width="400" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1lift.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
-The Lift Curve shows that the model to 20.000 calls, is approximately 2.6 times better. It means that you would reach approximately 32% of interested customers using a random choice.
+The Lift Curve shows that the model to 20000 calls, is approximately 2.6 times better. So, applying random choice model, you would reach approximately <b>32%</b> of interested customers. 
 
-<b>2 - What percentage of interested customers, could the sales center contact by calling 40,000?</b>
+<b>2 - Which percentage of interested customers, could the sales center contact by calling 40,000?</b>
 
 |Model Name		       |PRECISION @K		  |RECALL @K  	|
 |--------------------|------------------|-------------|
 |LGBM (40000 calls)  |0.184 	          |0.999        |
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2cgc.png" width="400" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2cgc.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
-Looking at point that red line crosses orange curve, we realize that you could contact approximately 83.70% of interested customers, making 40000 calls. 
+Looking at point that red line crosses orange curve, we realize that you could contact approximately <b>99.90%</b> of interested customers, making 40000 calls. 
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2lift.png" width="400" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2lift.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
-The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times better. It means that you would reach approximately 66% of interested customers using a random choice.
+The Lift Curve shows that the model to 40000 calls, is approximately 1.5 times better. So, applying random choice, you would reach approximately <b>66%</b> of interested customers.
 
 <b>3 - To contact 80% of interested customers, how many calls does the center sales needs to make?</b>
 
@@ -149,13 +149,13 @@ The Lift Curve shows that the model to 40.000 calls, is approximately 1.5 times 
 |--------------------|------------------|-------------|
 |LGBM (18700 calls)  |0.315 	          |0.801        |
 
-<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q3cgc.png" width="400" height="350" alt="logo" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q3cgc.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
 Looking at point that red line crosses orange curve, we realize that you need making approximately 18700 calls to contact 80% of interested customers. 
 
 # Conclusions
 
-At the end of this project, it was possible answer business questions and solve business problem, giving to sales center a solution for calls restrictions and helping in decision process. Besides it, the project was a good way to improve my knowledge about classification problems (in this case specific Learn to Rank), being possible find new model types, metrics and applications. 
+At the end of this project, it was possible answer business questions and solve business problem, giving to sales center a solution for calls restrictions and helping in decision process. Besides it, the project was a good way to improve my knowledge about classification problems (in this case specific Learn to Rank), being possible to find new model types, metrics and applications. 
 
 # Next Steps to Improve
 
