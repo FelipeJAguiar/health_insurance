@@ -13,7 +13,7 @@ So the business problem is:
 # Business Assumptions
 Business assumptions made were divided in two topics: 
 
-1 - Provide a Google Sheets doc that, inputing a customer data, returns customer propensity. 
+1 - Provide a Google Sheets doc that inputing a customer data, returns customer propensity. 
 
 2 - Answer some questions to understand and quantify business assumptions related with model performance.
 
@@ -79,35 +79,35 @@ Steps explained:
 
 Being a Learn to Rank (rank propensity score for each customer) problem, some classifier models were tested. Below, the metrics for each model trained:
 
-|Model Name		       |PRECISION @K		  |RECALL @K  	|PRECISION @K CV  |RECALL	@K CV  |
+|Model Name		      |PRECISION @K		 |RECALL @K  	|PRECISION @K CV  |RECALL	@K CV |
 |--------------------|------------------|-------------|-----------------|--------------|
 |KNN 	               |0.348 	          |0.047        |0.342            |0.057         |
 |Logistic Regression |0.303             |0.041        |0.305            |0.051         |
-|Extra Trees			   |0.346	            |0.047        |0.332            |0.055         |
-|Random Forest	     |0.346 	          |0.047	      |0.357            |0.060         |
-|XGBoost          	 |0.452             |0.061	      |0.416            |0.069         |
+|Extra Trees			|0.346	          |0.047        |0.332            |0.055         |
+|Random Forest	      |0.346 	          |0.047	      |0.357            |0.060         |
+|XGBoost          	|0.452             |0.061	      |0.416            |0.069         |
 |LGBM	               |0.460 	          |0.062	      |0.425            |0.071         |
 
-To improve the comparative visualization, a cumulative gains curve was plotted. Cumulative gains curve is an evaluation curve that demonstrates the model performance. Shows percentage of targets reached when considering a certain percentage of the population most likely to be targeted according to the model. We can see in the next plot, a comparative cumulative gains curve of all trained models.
+To improve the comparative visualization, a cumulative gains curve was plotted. Cumulative gains curve is an evaluation curve that demonstrates the model performance. Shows percentage of targets reached, when considering a certain percentage of the population, most likely to be targeted according to the model. We can see in the next plot, a comparative cumulative gains curve of all trained models.
 
 <img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/cgc.PNG" alt="logo11" style="zoom:80%;" />
 
-According metrics obtained and comulativa gains curve, the model chosen was LGBM. In addition, other factor that motivated the choice were, the LGBM being a small size model, which requires less storage use and makes applying it more agile.
+According metrics obtained and comulativa gains curve, the model chosen was LGBM. In addition, other factor that motivated the choice were, the LGBM being a small size model, which requires less storage use and makes it application more agile.
 
-Ps.: For the results in table were used k=1000 just to evaluate and comparing the models.
+Note: For the results in table, were used k=1000 just to evaluate and comparing the models.
 
 # Machine Learning Model Performance
-After LGBM be the applied model chosen, the next step is to adjust the hyperparameters. To do it, was used Optuna, a python library that find the best hyperparameters for the model.
+After LGBM be the applied model chosen, the next step was to adjust the hyperparameters. To do it, was used Optuna, a python library that find the best hyperparameters for the model.
 
 |Model Name		       |PRECISION @K		  |RECALL @K  	|
 |--------------------|------------------|-------------|
 |LGBM Tuned          |0.470 	          |0.063        |
 
-Note that in this case, the gains comparing tuned and not tuned model, were not satisfactory.
+Note that in this case, the gains comparing tuned and not tuned models, were not satisfactory.
 
 # Business Results
 
-Google sheets doc requested in business assumptions is available here:
+Google sheets doc, requested in business assumptions, is available here:
 
 https://docs.google.com/spreadsheets/d/12oexnJCRgMqstAtTf2y8CnciALNvd5rCq97DicaszHs/edit#gid=1134939231
 
@@ -123,25 +123,37 @@ To answer the business questions, was used the metrics (Precision and Recall @K)
 
 <img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1cgc.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
-Looking at point that red line crosses orange curve, we realize that you could contact approximately <b>83.70%</b> of interested customers, making 20000 calls. 
+Looking at point that red line crosses orange curve, it's possible to realize that you could contact approximately <b>83.70%</b> of interested customers, making 20000 calls. Comparing:
+
+|Model result (k=20000)  | <b>83,7%</b> interested customers |
+-------------------------|----------------------------|
+|Random choice (k=20000) | 32,2% interested customers |
+
+The gain obtained is demonstrated in next plot:
 
 <img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q1lift.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
-The Lift Curve shows that the model to 20000 calls, is approximately 2.6 times better. So, applying random choice model, you would reach approximately <b>32%</b> of interested customers. 
+The Lift Curve shows that the model to 40000 calls, is <b>2.6</b> (point that red line crosses orange line) times better than a random choice. 
 
 <b>2 - Which percentage of interested customers, could the sales center contact by calling 40,000?</b>
 
-|Model Name		       |PRECISION @K		  |RECALL @K  	|
+|Model Name		      |PRECISION @K		  |RECALL @K  	|
 |--------------------|------------------|-------------|
 |LGBM (40000 calls)  |0.184 	          |0.999        |
 
 <img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2cgc.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
-Looking at point that red line crosses orange curve, we realize that you could contact approximately <b>99.90%</b> of interested customers, making 40000 calls. 
+Looking at point that red line crosses orange curve, it's possible to realize that you could contact approximately <b>99.90%</b> of interested customers, making 40000 calls. Comparing:
+
+|Model result (k=40000)  | <b>99,9%</b> interested customers |
+-------------------------|----------------------------|
+|Random choice (k=40000) | 66,6% interested customers |
+
+The gain obtained is demonstrated in next plot:
 
 <img src="https://raw.githubusercontent.com/felipejaguiar/health_insurance/main/image/q2lift.png" width="500" height="450" alt="logo" style="zoom:80%;" />
 
-The Lift Curve shows that the model to 40000 calls, is approximately 1.5 times better. So, applying random choice, you would reach approximately <b>66%</b> of interested customers.
+The Lift Curve shows that the model to 40000 calls, is <b>1.5</b> (point that red line crosses orange line) times better than a random choice. 
 
 <b>3 - To contact 80% of interested customers, how many calls does the center sales needs to make?</b>
 
@@ -155,7 +167,7 @@ Looking at point that red line crosses orange curve, we realize that you need ma
 
 # Conclusions
 
-At the end of this project, it was possible answer business questions and solve business problem, giving to sales center a solution for calls restrictions and helping in decision process. Besides it, the project was a good way to improve my knowledge about classification problems (in this case specific Learn to Rank), being possible to find new model types, metrics and applications. 
+At the end of this project, it was possible answer business questions and solve business problem, giving to sales center a solution for calls restrictions and helping in decision process. Besides it, the project was a good way to improve my knowledge about classification problems (in this case specific Learn to Rank), being possible to find new model types, metrics and applications. Concluding about business, the model applied obtained satisfactory results, providing a 2.6 times better solution in the contacting potential customers process. 
 
 # Next Steps to Improve
 
